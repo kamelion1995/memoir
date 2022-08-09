@@ -1,0 +1,37 @@
+<div class="container" style="max-width:600px;background-color:white">
+    <h2>Authentification</h2>
+    <form>
+
+        <div class="form-group">
+            <label for="type"> Agent/Administrateur</label>
+            <select class="form-control" type="text" name="type" [(ngModel)]="type" required>
+            <option value="">----------</option>
+            <option value="agent">Agent</option>
+            <option value="administrateur"> Administrateur</option>
+             </select>
+
+        </div>
+       
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input  type="email" class="form-control" placeholder="Enter email"   
+        name="email" [(ngModel)]="email"  required 
+    >
+       
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" placeholder="Enter password" name="password" 
+        name="password"  [(ngModel)]="password" required  
+         >  
+
+          </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="remember"> Remember me</label>
+      </div>
+      <button (click)="submit()" class="btn btn-info">Login</button>
+    </form>
+
+</div>
+  
+

@@ -1,0 +1,36 @@
+
+
+    <div class="row p-4 pt-5"  >
+        <div class="col-md-6">
+    
+            <div class="card card-primary" >
+                <div class="card-header">
+                   <h3 class="card-title"><i class="fas fa-user-plus fa-2x"></i>Modification d'un canal</h3>
+            </div>
+        <form  (ngSubmit)="onTransmission()">
+            
+         <div class="form-group ">
+             <label for="LibCanal" >Libele Canal </label>
+             <input type="text" class="form-control"  required [(ngModel)]="canals.libcanal" name="LibCanal" style="width: 75%;"  >
+          </div>
+    
+             <div  class="form-group ">
+             <label for="Reference" >Reference </label>
+             <input type="text" class="form-control" required   [(ngModel)]="canals.reference" name="Reference" style="width: 75%;" >
+             </div>
+    
+         
+         <div class="card-footer">
+             <button type="submit" class="btn btn-primary"> Update </button>
+            
+         </div>
+         </form>
+            </div>
+            
+     </div>
+    
+    </div>
+
+
+
+

@@ -1,6 +1,7 @@
 <div class="wrapper">
-  <div class="preloader flex-column justify-content-center align-items-center">
+  <div class="preloader flex-column justify-content-center align-items-center ">
     <img
+      *ngIf="global.isconnected()"
       class="animation__wobble"
       src="assets/img/AdminLTELogo.png"
       alt="AdminLTELogo"
@@ -9,7 +10,7 @@
     />
   </div>
 
-  <nav class="main-header navbar navbar-expand navbar-dark">
+  <nav  *ngIf="global.isconnected()" class="main-header navbar navbar-expand navbar-dark">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"
@@ -23,7 +24,7 @@
         <a href="#" class="nav-link">Contact</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a routerLink="registration" class="nav-link">Ajout Agent</a>
+        <a routerLink="" class="nav-link"> </a>
       </li>
     </ul>
 
@@ -134,20 +135,19 @@
           data-widget="control-sidebar"
           data-slide="true"
           href="#"
-          role="button"
-        >
+          role="button" >
           <i class="fas fa-user"> </i>
         </a>
       </li>
     </ul>
   </nav>
 
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside *ngIf="global.isconnected()" class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-bold"><b>COURRIER</b></span>
+      <span class="brand-text font-weight-bold"><b>K-COURRIER</b></span>
     </a>
 
-    <div class="sidebar">
+    <div class="sidebar" *ngIf="global.isconnected()">
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img
@@ -191,32 +191,49 @@
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+            <ul  class="nav nav-treeview">
+              <li *ngIf="global.isadmin()" class="nav-item">
+                <a routerLink="/listuser" class="nav-link">
+                  <i class="nav-icon fas fa-cogs"></i>
                   <p>Gestion des Utilisateurs</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p></p>
-                  Gestion des Courriers
+              <li *ngIf="global.isadmin()" class="nav-item">
+                <a routerLink="/listservice"  class="nav-link">
+                  <i class="nav-icon fas fa-cogs"></i>
+                  <p>Gestion des Services</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Gestion des Correspondants</p>
-                </a>
+              
+              <li *ngIf="!global.isadmin()" class="nav-item">
+               <a  class="nav-link">
+                 <i  class="nav-icon fas fa-cogs"></i>
+                 <p> Gestion Courriers
+                   <i class="right fas fa-angle-left"></i>
+                 </p>
+               </a>
+               <u class="nav nav-treeview">
+                 <li class="nav-item">
+                   <a routerLink="/listcourrier" class="nav-link">
+                     <i class="nav-icon far fa-circle"></i>
+                     <p>Nouveau Courrier</p>
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                  <a  class="nav-link">
+                    <i class="nav-icon fas fa-list-ul"></i>
+                    <p>Enregistrer Courrier</p>
+                  </a>
+                </li>
+  
+               </u>
               </li>
             </ul>
           </li>
@@ -234,6 +251,30 @@
       </div>
     </section>
   </div>
+  <aside class="control-sidebar control-sidebar-dark"  *ngIf="global.isconnected()">
+    <div class="bg-dark">
+      <div class="card-body box-profile bg-dark">
+      <div class="text-center">
+      <img class="profile-user-img img-fluid img-circle" src="assets/img/user.png" alt="User profile picture">
+      </div>
+      <h3 class="profile-username text-center ellipsis">Nina Mcintire</h3>
+      <p class="text-muted text-center">Software Engineer</p>
+
+      <ul class="list-group  mb-3 bg-dark">
+      <li class="list-group-item k">
+      <a href="#" class="d-flex align-items-center"><i class="fa fa-lock pr-2"></i><b>Mot de Passe</b> </a>
+      </li>
+      <li class="list-group-item  ">
+        <a href="#" class="d-flex align-items-center"><i class="fa fa-user pr-2"></i><b>Mon Profile</b> </a>
+        </li>
+      </ul>
+      
+      <a routerLink="/loginpage"  class="btn btn-primary btn-block"><b>Deconnexion</b></a>
+      </div>
+      
+      </div>
+
+  </aside>
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">

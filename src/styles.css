@@ -3,3 +3,11 @@
 html,body{
     background-color: #f4f6f9;
 }
+
+.ellipsis {
+    text-overflow:ellipsis;
+    white-space :nowrap;
+    overflow: hidden;
+
+}
+

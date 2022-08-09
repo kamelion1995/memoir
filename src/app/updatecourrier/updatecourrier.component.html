@@ -1,0 +1,47 @@
+
+ <div class="row p-4 pt-5" >
+    <div class="col-md-6">
+
+        <div class="card card-primary">
+            <div class="card-header">
+               <h3 class="card-title"><i class="fas fa-user-plus fa-2x"></i>Formulaire de Modification  d'un Courrier</h3>
+        </div>
+    <form  (ngSubmit)="onCourrier()">
+        <div class="card-body">
+           
+             
+      
+        <div class="form-group ">
+            <label for="objet" >Objet</label>
+            <input type="text" class="form-control"  name="objet" [(ngModel)]="courrier.objet"   required #objet="ngModel"
+            [class.is-invalid]="objet.invalid && objet.touched">
+      </div>
+
+            <div class="form-group">
+                <label for="details" >Details </label>
+                <input type="text" class="form-control" name="details" [(ngModel)]="courrier.details"   required #details="ngModel"
+                [class.is-invalid]="details.invalid && details.touched">
+            </div>
+ <div class="card-footer">
+            <button type="submit" class="btn btn-primary"> Update </button>
+           
+        </div>
+  
+           
+        </div>
+        </form>
+   
+        
+        
+    
+        
+       
+
+</div>
+</div>
+
+
+
+
+   
+

@@ -1,0 +1,58 @@
+
+<div class="modal-header" >
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true"> &times;</span>
+    </button>
+</div>
+<div class="modal-body" >
+ <div class="row p-4 pt-5" >
+    <div class="col-md-6">
+
+        <div class="card card-primary" style="width:220%;">
+            <div class="card-header">
+               <h3 class="card-title"><i class="fas fa-user-plus fa-2x"></i>Formulaire de creation d'un Courrier</h3>
+        </div>
+    <form  (ngSubmit)="Courrier()">
+        <div class="card-body">
+           
+             
+      
+        <div class="form-group ">
+            <label for="objet"> Objet </label>
+            <input type="text" class="form-control"  name="objet" [(ngModel)]="courrier.objet"   required #objet="ngModel"
+            [class.is-invalid]="objet.invalid && objet.touched">
+      </div>
+
+            <div class="form-group">
+                <label for="details"> Details </label>
+                <input type="text" class="form-control" name="responsable" [(ngModel)]="courrier.details"   required #details="ngModel"
+                [class.is-invalid]="details.invalid && details.touched">
+            </div>
+
+      
+        
+        
+           
+             
+    <div class="card-footer">
+            <button type="submit" class="btn btn-primary"> Enregistrer </button>
+           
+        </div>
+  
+           
+        </div>
+        </form>
+   
+        
+        
+    
+        
+       
+
+</div>
+</div>
+</div>
+
+
+
+   

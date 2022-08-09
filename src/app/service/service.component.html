@@ -1,0 +1,65 @@
+<div class="modal-header" >
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true"> &times;</span>
+    </button>
+</div>
+<div class="modal-body" >
+ <div class="row p-4 pt-5" >
+    <div class="col-md-6">
+
+        <div class="card card-primary" style="width:220%;">
+            <div class="card-header">
+               <h3 class="card-title"><i class="fas fa-user-plus fa-2x"></i>Formulaire de creation d'un Service</h3>
+        </div>
+    <form  (ngSubmit)="Service()">
+        <div class="card-body">
+           
+             
+      
+        <div class="form-group ">
+            <label for="nomService" >Nom Service</label>
+            <input type="text" class="form-control"  name="nomService" [(ngModel)]="service.nomService"   required #nomService="ngModel"
+            [class.is-invalid]="nomService.invalid && nomService.touched">
+      </div>
+
+            <div class="form-group">
+                <label for="responsable" >Responsable </label>
+                <input type="text" class="form-control" name="responsable" [(ngModel)]="service.responsable"   required #responsable="ngModel"
+                [class.is-invalid]="responsable.invalid && responsable.touched">
+            </div>
+
+      
+        <div class="form-group">
+                <label for="telService">Telephone Service </label>
+                <input type="text" class="form-control" name="telService"   required #telService="ngModel" [(ngModel)]="service.telService"  
+                [class.is-invalid]="telService.invalid && telService.touched" >
+        </div>
+        
+           
+                <div class="form-group">
+                    <label for="telephone1" >Email Service </label>
+                    <input type="text" class="form-control" name="emailService" required #emailService="ngModel"
+                    [class.is-invalid]="emailService.invalid && emailService.touched" [(ngModel)]="service.emailService">
+                </div>
+    <div class="card-footer">
+            <button type="submit" class="btn btn-primary"> Enregistrer </button>
+           
+        </div>
+  
+           
+        </div>
+        </form>
+   
+        
+        
+    
+        
+       
+
+</div>
+</div>
+</div>
+
+
+
+   

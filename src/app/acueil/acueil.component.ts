@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Agent } from '../agent';
+
 
 @Component({
   selector: 'app-acueil',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./acueil.component.css']
 })
 export class AcueilComponent implements OnInit {
+  agent= new Agent;
 
   constructor() { }
 
