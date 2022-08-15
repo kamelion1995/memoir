@@ -14,6 +14,7 @@ import { ListserviceComponent } from './listservice/listservice.component';
 import { ListuserComponent } from './listuser/listuser.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 
+
 import { RegistrationComponent } from './registration/registration.component';
 import { ServiceComponent } from './service/service.component';
 import { UpdatecanalComponent } from './updatecanal/updatecanal.component';

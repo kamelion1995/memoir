@@ -34,6 +34,9 @@ import {Ng2OrderModule} from 'ng2-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
 import { AjouparticipanComponent } from './ajouparticipan/ajouparticipan.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -71,10 +74,12 @@ import { AjouparticipanComponent } from './ajouparticipan/ajouparticipan.compone
     NgxPaginationModule,
     Ng2OrderModule,
     Ng2SearchPipeModule,
+    MatDialogModule,
     ModalModule.forRoot(),
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'danger'
     }),
+    BrowserAnimationsModule,
     
     
    

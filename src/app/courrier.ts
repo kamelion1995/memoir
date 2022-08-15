@@ -5,6 +5,7 @@ export class Courrier {
     details!:string;
     objet!:string;
     etat!:boolean;
+    hasCanal!:boolean
 
 
 }

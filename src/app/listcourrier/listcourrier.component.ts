@@ -7,6 +7,8 @@ import { CanalComponent } from '../canal/canal.component';
 import { CourrierComponent } from '../courrier/courrier.component';
 import { Router } from '@angular/router';
 import { CanaltrService } from '../canaltr.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-listcourrier',
@@ -21,7 +23,7 @@ export class ListcourrierComponent implements OnInit {
   p:number=1;
 
 
-  constructor( private courrierService:CourrierService, private modalService: BsModalService, private router:Router) { }
+  constructor( private courrierService:CourrierService, private modalService: BsModalService, private router:Router,private dialog:MatDialog) { }
 
   ngOnInit(): void {
 
@@ -35,11 +37,11 @@ export class ListcourrierComponent implements OnInit {
       }
     );
 }
-openModal(){
-
+openModal(courrier:Courrier){
+  localStorage.removeItem("courrier")
+  localStorage.setItem("courrier",JSON.stringify(courrier))
+  
   this.modalRef = this.modalService.show(CanalComponent);
-
-
 }
 
 AjoutCourrier(){
